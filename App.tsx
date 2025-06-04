@@ -1,7 +1,9 @@
 import './global.css';
 
 import { StatusBar } from 'expo-status-bar';
-import { View, SafeAreaView, Text } from 'react-native';
+import { View, Text, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { useState } from 'react';
 import AnimationSwitchTheme, { OverlayProvider } from './components/AnimationSwitchtheme';
 import BottomMenuExpandable from './components/BottomMenuExpandle';
@@ -33,7 +35,7 @@ export default function App() {
 
   return (
     <OverlayProvider>
-      <SafeAreaView style={{ flex: 1, backgroundColor: themeColors.background }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: themeColors.background }} edges={['top']}>
         {/* Clean header */}
         <View
           style={{
